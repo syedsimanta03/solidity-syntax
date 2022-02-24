@@ -13,15 +13,15 @@ contract FirstContract {
     Player public rasel = Player('Rasel', 20);
     Player public tor = Player({score: 25, name: 'Tor'});
 
+// read
+    function readbob() external view returns(uint) {
+        return bob.score;
+    }
     // update struct
     function updateBob(uint _score) external {
         bob.score = _score;
     }
-    // read
-    function readbob() external view returns(uint) {
-        return bob.score;
-    }
-
+    
     function deleteRasel() external {
         delete rasel;
     }
