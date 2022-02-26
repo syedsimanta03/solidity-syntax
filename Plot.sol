@@ -18,7 +18,7 @@ contract  ParkingLot is Ownable {
     Pspot spot = Pspot(spots[_spotId]);
     return spot.isVacant();
   }
-
+// fallback function call with ether without data
  function takeUpSpot(unint _spotId) payable external {
     (bool success, ) = (spots[_spotId]).call{value: msg.value}(""); //address.call{ether amount}(without data)
     if(!success){

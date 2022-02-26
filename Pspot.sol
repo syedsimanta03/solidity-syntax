@@ -51,6 +51,7 @@ contract  Pspot Ownable{
     currentStatuses = LotStatuses.VACANT;
   }
 
+// fallback function 
   receive() external payable checkVacancy checkCost(10 ether) {
     currentStatuses = LotStatuses.FULL;
     owner.transfer(msg.value);
